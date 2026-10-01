@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quote of the Day</title>
+</head>
+<body>
+
+<h1>Quote of the Day</h1>
+<div id="quote"></div>
+
+<h2>Website List</h2>
+<div id="websites"></div>
+
+<script>
+// Array of 5 quotes
+let quotes = [
+    "Youth is never coming back, but aren't we young forever?",
+    "It is scary to look back and see how far you have come, and to look foward at nothing but uncertainty.",
+    "Flights change and cats die. It will be alright.",
+    "Be yourself; everyone else is already taken.",
+    "Let the demon to his demons, rest your own soul. There is nothing else."
+];
+
+// Array of 3 website URLs
+let websites = [
+    "https://www.microsoft.com",
+    "https://www.github.com",
+    "https://www.w3schools.com"
+];
+
+</script>
+
+</body>
+</html>
+let userNum = prompt("Enter a number:");
+let index = userNum % 5;   // remainder becomes the quote index
+document.getElementById("quote").innerHTML = quotes[index];
+let websiteHTML = "";
+for (let i = 0; i < websites.length; i++) {
+    websiteHTML += `<a href="${websites[i]}" target="_blank">${websites[i]}</a><br>`;
+}
+document.getElementById("websites").innerHTML = websiteHTML;
+ let fav = prompt("Enter your favorite website URL:");
+websites.push(fav);   // add to end
+websites.shift();     // remove first website
+let updatedHTML = "";
+for (let i = 0; i < websites.length; i++) {
+    updatedHTML += `<a href="${websites[i]}" target="_blank">${websites[i]}</a><br>`;
+}
+document.getElementById("websites").innerHTML += "<h3>Updated List:</h3>" + updatedHTML;
