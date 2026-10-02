@@ -15,7 +15,7 @@
 // Array of 5 quotes
 let quotes = [
     "Youth is never coming back, but aren't we young forever?",
-    "It is scary to look back and see how far you have come, and to look foward at nothing but uncertainty.",
+    "It is scary to look back and see how far you have come, and to look forward at nothing but uncertainty.",
     "Flights change and cats die. It will be alright.",
     "Be yourself; everyone else is already taken.",
     "Let the demon to his demons, rest your own soul. There is nothing else."
@@ -28,23 +28,31 @@ let websites = [
     "https://www.w3schools.com"
 ];
 
-</script>
-
-</body>
-</html>
+// Step 1: Prompt user for a number and display quote
 let userNum = prompt("Enter a number:");
-let index = userNum % 5;   // remainder becomes the quote index
+let index = userNum % 5;
 document.getElementById("quote").innerHTML = quotes[index];
+
+// Step 2: Display original website list
 let websiteHTML = "";
 for (let i = 0; i < websites.length; i++) {
     websiteHTML += `<a href="${websites[i]}" target="_blank">${websites[i]}</a><br>`;
 }
 document.getElementById("websites").innerHTML = websiteHTML;
- let fav = prompt("Enter your favorite website URL:");
-websites.push(fav);   // add to end
-websites.shift();     // remove first website
+
+// Step 3: Prompt for favorite website and update array
+let fav = prompt("Enter your favorite website URL:");
+websites.push(fav);
+websites.shift();
+
+// Step 4: Display updated website list
 let updatedHTML = "";
 for (let i = 0; i < websites.length; i++) {
     updatedHTML += `<a href="${websites[i]}" target="_blank">${websites[i]}</a><br>`;
 }
 document.getElementById("websites").innerHTML += "<h3>Updated List:</h3>" + updatedHTML;
+</script>
+
+</body>
+</html>
+
